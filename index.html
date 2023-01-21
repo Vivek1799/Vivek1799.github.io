@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="charset" content="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover"
+    />
+    <title>Vivek Patil</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    
+  </head>
+
+<style>
+
+:root {
+        --step--2: clamp(0.69rem, calc(0.63rem + 0.34vw), 2.29rem);
+        --step--1: clamp(0.83rem, calc(0.71rem + 0.61vw), 3.71rem);
+        --step-0: clamp(1rem, calc(0.79rem + 1.06vw), 6rem);
+        --step-1: clamp(1.2rem, calc(0.84rem + 1.81vw), 9.71rem);
+        --step-2: clamp(1.44rem, calc(0.83rem + 3.03vw), 15.71rem);
+        --step-3: clamp(1.73rem, calc(0.72rem + 5.03vw), 25.42rem);
+        --step-4: clamp(2.07rem, calc(0.42rem + 8.29vw), 41.12rem);
+        --step-5: clamp(2.49rem, calc(-0.23rem + 13.59vw), 66.53rem);
+
+        --space-3xs-2xs: clamp(0.25rem, calc(0.14rem + 0.56vw), 1.56rem);
+        --space-2xs-xs: clamp(0.5rem, calc(0.34rem + 0.79vw), 2.38rem);
+        --space-xs-s: clamp(0.75rem, calc(0.55rem + 1.01vw), 3.13rem);
+        --space-s-m: clamp(1rem, calc(0.69rem + 1.56vw), 4.69rem);
+        --space-m-l: clamp(1.5rem, calc(1.1rem + 2.01vw), 6.25rem);
+        --space-l-xl: clamp(2rem, calc(1.38rem + 3.13vw), 9.38rem);
+        --space-xl-2xl: clamp(3rem, calc(2.19rem + 4.03vw), 12.5rem);
+        --space-2xl-3xl: clamp(4rem, calc(2.75rem + 6.25vw), 18.75rem);
+      }
+     /* body,
+      header,
+      main, */
+      /* p {
+        margin: 0;
+      } */
+
+html:focus-within {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-height: 100vh;
+        text-rendering: optimizeLegibility;
+        font-family: "Polysans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol";
+        font-kerning: normal;
+        font-variant-ligatures: discretionary-ligatures;
+        font-weight: 50;
+        font-stretch: 110%;
+        font-optical-sizing: none;
+        line-height: 1.1;
+      }
+
+      main {
+        isolation: isolate;
+        width: 100%;
+        max-width: 100%;
+        padding: var(--space-m-l);
+      }
+
+      p {
+        font-size: var(--step-3);
+        letter-spacing: -0.025em;
+        word-spacing: -0.01em;
+      }
+
+      p + p {
+        margin-top: var(--space-l-xl);
+      }
+
+      p,
+/*this code adds contrasts to the overall page.      
+/* a {
+    position: relative;
+    z-index: 2;
+    color: white;
+    filter: contrast(150%);
+    mix-blend-mode: exclusion;
+  } */
+
+  .gifb {
+        position: relative;
+        z-index: 2;
+        color:white;
+        filter: contrast(45%) brightness(150%);
+        mix-blend-mode: default;
+}
+
+
+      a {
+        text-decoration: none;
+        font-stretch: 200%;
+        font-weight: 200;
+        background: linear-gradient(0deg, white, white) no-repeat right bottom /
+          0 0;
+        transition: background-size 200ms ease-in-out, color 200ms ease-in-out; 
+      }
+
+      a:focus {
+        outline: none;
+      }
+
+      a:hover,
+      a:active,
+      a:focus {
+        background-size: 100% 100%;
+        background-position-x: left;
+        color: black;
+      } 
+
+      em {
+        font-family: "Baryton";
+        font-weight: normal;
+        font-style: normal;
+        font-optical-sizing: auto;
+        letter-spacing: initial;
+        font-size: calc(var(--step-3) * 1.1);
+      }
+
+      #gradient {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        contain: strict;
+        background-image: conic-gradient(
+            from var(--deg, 0deg) at 50% 50%,
+            rgba(104, 243, 174, 0.666),
+            hsla(210, 83%, 70%, 0.5)
+          ),
+          url("data:image/svg+xml,%3Csvg viewBox='0 0 5025 5025' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.1' numOctaves='20' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        filter: contrast(100%) brightness(110%);
+        background-position: center;
+        background-size: cover;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html:focus-within {
+          scroll-behavior: auto;
+        }
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+          scroll-behavior: auto !important;
+        }
+      }
+
+      .visually-hidden {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: auto;
+        margin: 0;
+        overflow: hidden;
+        padding: 0;
+        position: absolute;
+        width: 1px;
+        white-space: nowrap;
+      }
+
+      .bm { 
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,500&display=swap');
+        
+        }
+
+      .text-size { font-size: 69px;
+        }
+
+        .spacing { margin-top: 20px;
+            }
+        .spacingsocial { margin-top: 40px;
+            }  
+        .social-text-size { font-size: 40px;
+            }
+
+        .social-links a { margin-right: 100px;
+            
+            }
+        .social-alignment { margin-left: 250px;
+            }  
+            
+        .article-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* center items horizontally */
+  justify-content: center; /* center items vertically */
+}
+.article-box a h3{
+  font-size:-0.5rem;
+}
+
+.articles-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.article-spacing {
+  margin: 70px;
+}
+
+.article-box {
+  flex: 1; /* this will make the article boxes take up equal space within the container */
+  margin: 0 10px; /* this will add a margin of 10px on left and right side of the article box*/
+}
+
+.article-title {
+  font-size: 2rem; /* Adjust as desired */
+  font-family: 'Arial', sans-serif; /* Adjust as desired */
+    font-weight: 600;
+}
+
+.article-description {
+  font-size: 1.8rem; /* Adjust as desired */
+  font-weight:300;
+}
+
+.article-image {
+    object-fit: cover;
+    object-position: center; /* or any other position you want */
+    background-clip: content-box;
+    background-origin: content-box;
+    
+
+}
+
+.b-image img{
+    mix-blend-mode: normal;
+}
+
+.gif-container {
+    position: relative;
+    width: 100%; /* Adjust as needed */
+    height: 0; /* Adjust as needed */
+    padding-bottom: 75%; /* Adjust as needed */
+    /* background-color: white; Make sure the container has a transparent background */
+   
+}
+
+.gif-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Make sure the gif fills the container */
+    height: 100%;
+    object-fit: cover; /* Make sure the gif fills the container */
+    mix-blend-mode: normal; /* Adjust as needed */
+    /* image-rendering: -webkit-optimize-contrast;  */
+} 
+
+
+.justtext {
+   
+    position: relative;
+     z-index: 2;
+    color: white;
+    filter: contrast(150%);
+    mix-blend-mode: exclusion;
+  } 
+
+  .highlight {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 0.05em; /* adjust as per your requirement*/
+  mix-blend-mode: normal;
+  filter: brightness(150%) contrast(150%);
+  z-index: 4;
+  }
+
+.gifb {
+        position: relative;
+        z-index: 2;
+        color:white;
+        filter: contrast(45%) brightness(150%);
+        mix-blend-mode: default;
+}
+.row {
+  display: grid;
+  /* grid-template-columns: repeat(3, 1fr); */
+  /* justify-content:center;
+  align-items:center; */
+}
+
+
+</style>
+    </style>
+  
+  </head> 
+  <body>
+  
+   <!-- <div class="columns">
+    <div class="column">
+      
+    </div> -->
+
+
+
+  <!-- <header class="visually-hidden">
+      <h1>Vivek Patil's website</h1>
+    </header> -->
+   
+    <main>
+   <p class="balance-text text-size justtext style="touch-action: pan-x;">
+      Hey, I'm <em><i><b><span class="highlight">Vivek Patil</b> </i></em>, currently pursuing my Master's in Data Journalism from Columbia School of Journalism, New York.
+      </p>
+      <p class="balance-text text-size spacing justtext">
+      I'm interested in covering <em><i><b><span class="highlight">infrastructure</span>, <span class="highlight">business</b></i></em> and everything that revolves around <em><i><b><span class="highlight">data.</b></i></em>
+            
+      <div class="social-links spacingsocial social-text-size social-alignment spacing justtext">
+        <a href="https://github.com/Vivek1799" target="_blank" style="font-weight:300; color: white;">Github</a>
+        <a href="https://twitter.com/vivek_patil17" target="_blank" style="font-weight:300; color: white;">Twitter</a>
+        <a href="mailto:vrp2124@columbia.edu"  target="_blank" style="font-weight:300; color: white;">Email</a>
+        <a href="https://www.linkedin.com/in/vivek-patil-6679aa207/"  target="_blank" style="font-weight:300; color: white;">LinkedIn</a>
+    </div>
+    
+<div class="row">
+  <div class="container article-spacing ">
+    <div class="articles-container">
+      <div class="article-box">
+        <a href="https://github.com/Vivek1799/Supreme-Court-2022-Oral-arguments" target="_blank">
+        <img class="gifb" src="images/ezgif.com-gif-maker.gif" alt="description of the gif" style="filter:brightness(120%);" style="contrast(120%)" style="image-rendering: -webkit-optimize-contrast"; width="550" height="400" frameBorder="1" alt="Article Image" width="550" height="400">
+          <h3 class="article-title justtext">A database that looks for the most Cited sections in the U.S Supreme Court Oral Arguments in 2022. </h3>
+          <p class="article-description justtext">I scraped the Supreme court oral arguments that looks for most quoted sections, the number of times key words like "constitutional","equal protection" were used.</p>
+        </a>
+      </div>
+     
+<div class="article-box justtext">
+        <div class="article-box">
+            <a href="https://rentwirenyc.substack.com/p/new-york-city-council-weighs-rent" target="_blank">
+
+            <img src="images/rent_image.jpg" class="b-image article-image" alt="Article Image" width="550" height="400">
+              <h3 class="article-title justtext">New York City Council Weighs Rent Regulation on Commercial Spaces</h3>
+              <p class="article-description justtext">The city has not seen commercial rent regulation in more than fifty years. The new bill amidst skyrocketing rents, pandemic and Inflation aims to change that.</p>
+            </a>
+      </div>
+
+    </div>
+</div>
+      </p>
+      <p class="balance-text">
+       
+        
+      </p>
+      <p class="balance-text">
+        
+      </p>
+      <div id="gradient"></div>
+      
+        
+    </main>
+<script>                        
+ gsap.registerPlugin(ScrollTrigger);
+
+    
+    ScrollTrigger.config({
+      limitCallbacks: true,
+      ignoreMobileResize: true,
+    });
+
+    ScrollTrigger.normalizeScroll(true);
+
+    
+  gsap.to("html", {
+         "--deg": "360deg",
+         ease: "sine.out",
+         scrollTrigger: {
+           trigger: "body",
+           start: "top top",
+           end: "bottom bottom",
+           scrub: 4,
+         },
+       });
+
+ </script>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+
+</body>
+</html>
