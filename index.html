@@ -1,427 +1,267 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta name="charset" content="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width,initial-scale=1,shrink-to-fit=no,viewport-fit=cover"
-    />
-    <title>Vivek Patil</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-    
-  </head>
-
-<style>
-
-:root {
-        --step--2: clamp(0.69rem, calc(0.63rem + 0.34vw), 2.29rem);
-        --step--1: clamp(0.83rem, calc(0.71rem + 0.61vw), 3.71rem);
-        --step-0: clamp(1rem, calc(0.79rem + 1.06vw), 6rem);
-        --step-1: clamp(1.2rem, calc(0.84rem + 1.81vw), 9.71rem);
-        --step-2: clamp(1.44rem, calc(0.83rem + 3.03vw), 15.71rem);
-        --step-3: clamp(1.73rem, calc(0.72rem + 5.03vw), 25.42rem);
-        --step-4: clamp(2.07rem, calc(0.42rem + 8.29vw), 41.12rem);
-        --step-5: clamp(2.49rem, calc(-0.23rem + 13.59vw), 66.53rem);
-
-        --space-3xs-2xs: clamp(0.25rem, calc(0.14rem + 0.56vw), 1.56rem);
-        --space-2xs-xs: clamp(0.5rem, calc(0.34rem + 0.79vw), 2.38rem);
-        --space-xs-s: clamp(0.75rem, calc(0.55rem + 1.01vw), 3.13rem);
-        --space-s-m: clamp(1rem, calc(0.69rem + 1.56vw), 4.69rem);
-        --space-m-l: clamp(1.5rem, calc(1.1rem + 2.01vw), 6.25rem);
-        --space-l-xl: clamp(2rem, calc(1.38rem + 3.13vw), 9.38rem);
-        --space-xl-2xl: clamp(3rem, calc(2.19rem + 4.03vw), 12.5rem);
-        --space-2xl-3xl: clamp(4rem, calc(2.75rem + 6.25vw), 18.75rem);
-      }
-     /* body,
-      header,
-      main, */
-      /* p {
-        margin: 0;
-      } */
-
-html:focus-within {
-        scroll-behavior: smooth;
-      }
-
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Vivek Patil">
+    <meta name="author" content="Vivek Patil">
+    <title>Vivek's Portfolio</title>
+     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
+     <!-- Bootstrap -->
+     <link href="style.css" rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis:YEAR@2010&display=swap" rel="stylesheet">
+     <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+     <script src="https://kit.fontawesome.com/e019c793cb.js" crossorigin="anonymous"></script>
+     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+     <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <!-- <script src="d3.min.js"></script> 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js"></script> 
+      <script src="masonry.js"></script> -->
+    <style>
       body {
-        min-height: 100vh;
-        text-rendering: optimizeLegibility;
-        font-family: "Polysans", -apple-system, BlinkMacSystemFont, "Segoe UI",
-          "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
-          "Segoe UI Emoji", "Segoe UI Symbol";
-        font-kerning: normal;
-        font-variant-ligatures: discretionary-ligatures;
-        font-weight: 50;
-        font-stretch: 110%;
-        font-optical-sizing: none;
-        line-height: 1.1;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+        background-image: url("images/Untitled.jpg");
+        background-repeat: repeat;
+        background-size: 600px;
       }
-
-      main {
-        isolation: isolate;
-        width: 100%;
+      .header-image1 {
+        display: block;
         max-width: 100%;
-        padding: var(--space-m-l);
-      }
-
-      p {
-        font-size: var(--step-3);
-        letter-spacing: -0.025em;
-        word-spacing: -0.01em;
-      }
-
-      p + p {
-        margin-top: var(--space-l-xl);
-      }
-
-      p,
-/*this code adds contrasts to the overall page.      
-/* a {
-    position: relative;
-    z-index: 2;
-    color: white;
-    filter: contrast(150%);
-    mix-blend-mode: exclusion;
-  } */
-
-  .gifb {
-        position: relative;
-        z-index: 2;
-        color:white;
-        filter: contrast(45%) brightness(150%);
-        mix-blend-mode: default;
-}
-
-
-      a {
-        text-decoration: none;
-        font-stretch: 200%;
-        font-weight: 200;
-        background: linear-gradient(0deg, white, white) no-repeat right bottom /
-          0 0;
-        transition: background-size 200ms ease-in-out, color 200ms ease-in-out; 
-      }
-
-      a:focus {
-        outline: none;
-      }
-
-      a:hover,
-      a:active,
-      a:focus {
-        background-size: 100% 100%;
-        background-position-x: left;
-        color: black;
-      } 
-
-      em {
-        font-family: "Baryton";
-        font-weight: normal;
-        font-style: normal;
-        font-optical-sizing: auto;
-        letter-spacing: initial;
-        font-size: calc(var(--step-3) * 1.1);
-      }
-
-      #gradient {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        contain: strict;
-        background-image: conic-gradient(
-            from var(--deg, 0deg) at 50% 50%,
-            rgba(104, 243, 174, 0.666),
-            hsla(210, 83%, 70%, 0.5)
-          ),
-          url("data:image/svg+xml,%3Csvg viewBox='0 0 5025 5025' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.1' numOctaves='20' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-        filter: contrast(100%) brightness(110%);
-        background-position: center;
-        background-size: cover;
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        html:focus-within {
-          scroll-behavior: auto;
-        }
-        *,
-        *::before,
-        *::after {
-          animation-duration: 0.01ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 0.01ms !important;
-          scroll-behavior: auto !important;
-        }
-      }
-
-      .visually-hidden {
-        border: 0;
-        clip: rect(0 0 0 0);
         height: auto;
-        margin: 0;
-        overflow: hidden;
-        padding: 0;
-        position: absolute;
-        width: 1px;
-        white-space: nowrap;
+        margin: 1 auto;
+        position: relative;
+        z-index: 1;
+        top: 18px;
+        left: 10px;
+      }
+      .header-image2 {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+        top: 10px;
+        right: 30px;
+        grid-column: 2;
+      }
+      .interestedin {
+        display: block;
+        max-width: 90%;
+        height: auto;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+        top: -50px;
+
+        }
+    /* Media Queries for smaller screens */
+@media only screen and (max-width: 768px) {
+  .header-image1, .header-image2, .interestedin {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header-image1, .header-image2, .interestedin {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header-image2 {
+    content: url('images/datajresized.jpg');
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header-image1 {
+    content: url('images/header1resized.jpg');
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .header-image1 {
+    content: url('images/header1resized2.jpg');
+  }
+}
+
+
+
+      .main-content {
+        grid-column: 1 / -1;
+        /* adjust padding as needed */
+        padding: 20px;
+      }
+      .sidebar {
+        /* adjust padding as needed */
+        padding: 20px;
       }
 
-      .bm { 
-        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@1,500&display=swap');
-        
-        }
-
-      .text-size { font-size: 69px;
-        }
-
-        .spacing { margin-top: 20px;
-            }
-        .spacingsocial { margin-top: 40px;
-            }  
-        .social-text-size { font-size: 40px;
-            }
-
-        .social-links a { margin-right: 100px;
-            
-            }
-        .social-alignment { margin-left: 250px;
-            }  
-            
-        .article-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* center items horizontally */
-  justify-content: center; /* center items vertically */
-}
-.article-box a h3{
-  font-size:-0.5rem;
+      .social-media-container {
+  background-color: #FBE597; /* yellow pastel color */
+  padding: 20px; /* add some padding */
+  display: flex; /* use flexbox to align buttons horizontally */
+  justify-content: center; /* center the buttons horizontally */
+  width: 60%;
+  margin: -60px auto 0; /* add margin to center container vertically */
 }
 
-.articles-container {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
+
+.social-media-link {
+  color: black; /* black text color */
+  font-size: 20px; /* adjust font size as needed */
+  font-family: "Inter", sans-serif; /* use Inter font */
+  text-decoration: none; /* remove underline */
+  margin: 0 40px; /* add margin between links */
 }
-
-.article-spacing {
-  margin: 70px;
-}
-
-.article-box {
-  flex: 1; /* this will make the article boxes take up equal space within the container */
-  margin: 0 10px; /* this will add a margin of 10px on left and right side of the article box*/
-}
-
-.article-title {
-  font-size: 2rem; /* Adjust as desired */
-  font-family: 'Arial', sans-serif; /* Adjust as desired */
-    font-weight: 600;
-}
-
-.article-description {
-  font-size: 1.8rem; /* Adjust as desired */
-  font-weight:300;
-}
-
-.article-image {
-    object-fit: cover;
-    object-position: center; /* or any other position you want */
-    background-clip: content-box;
-    background-origin: content-box;
-    
-
-}
-
-.b-image img{
-    mix-blend-mode: normal;
-}
-
-.gif-container {
-    position: relative;
-    width: 100%; /* Adjust as needed */
-    height: 0; /* Adjust as needed */
-    padding-bottom: 75%; /* Adjust as needed */
-    /* background-color: white; Make sure the container has a transparent background */
-   
-}
-
-.gif-container img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%; /* Make sure the gif fills the container */
-    height: 100%;
-    object-fit: cover; /* Make sure the gif fills the container */
-    mix-blend-mode: normal; /* Adjust as needed */
-    /* image-rendering: -webkit-optimize-contrast;  */
-} 
-
-
-.justtext {
-   
-    position: relative;
-     z-index: 2;
-    color: white;
-    filter: contrast(150%);
-    mix-blend-mode: exclusion;
-  } 
-
-  .highlight {
-  background-color: rgba(255, 255, 255, 0.2);
-  padding: 0.05em; /* adjust as per your requirement*/
-  mix-blend-mode: normal;
-  filter: brightness(150%) contrast(150%);
-  z-index: 4;
+@media screen and (max-width: 800px) {
+  .social-media-link {
+    font-size:18px; /* adjust font size for smaller screens */
+    margin: 0 20px; /* adjust margin for smaller screens */
   }
-
-.gifb {
-        position: relative;
-        z-index: 2;
-        color:white;
-        filter: contrast(45%) brightness(150%);
-        mix-blend-mode: default;
 }
-.row {
+@media screen and (max-width: 550px) {
+  .social-media-link {
+    font-size:12px; /* adjust font size for smaller screens */
+    margin: 0 20px; /* adjust margin for smaller screens */
+  }
+}
+@media screen and (max-width: 400px) {
+  .social-media-link {
+    font-size:8px; /* adjust font size for smaller screens */
+    margin: 0 20px; /* adjust margin for smaller screens */
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .social-media-link {
+    font-size:6px; /* adjust font size for smaller screens */
+    margin: 0 20px; /* adjust margin for smaller screens */
+  }
+}
+
+.article-container {
   display: grid;
-  /* grid-template-columns: repeat(3, 1fr); */
-  /* justify-content:center;
-  align-items:center; */
+  grid-template-columns: repeat(3, 1fr);
+  background-color: white; /* add a background color */
+  grid-gap: 20px;
+  top: 10px;
+}
+
+.article {
+  border: 2px solid rgb(23, 23, 23);
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.article img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+  justify-content: center;
+  align-items: center;
+  left: 3px;
+}
+
+.article h2 {
+  font-size: 24px;
+  margin: 0;
+  font-family: "Inter", sans-serif; 
+}
+
+.article p {
+  font-size: 16px;
+  margin: 0;
+  font-family: "Inter", sans-serif; 
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+@media only screen and (max-width: 600px) {
+  .article-container {
+    display: block;
+  }
 }
 
 
-</style>
     </style>
-  
-  </head> 
+  </head>
   <body>
-  
-   <!-- <div class="columns">
-    <div class="column">
-      
-    </div> -->
-
-
-
-  <!-- <header class="visually-hidden">
-      <h1>Vivek Patil's website</h1>
-    </header> -->
-   
-    <main>
-   <p class="balance-text text-size justtext style="touch-action: pan-x;">
-      Hey, I'm <em><i><b><span class="highlight">Vivek Patil</b> </i></em>, currently pursuing my Master's in Data Journalism from Columbia School of Journalism, New York.
-      </p>
-      <p class="balance-text text-size spacing justtext">
-      I'm interested in covering <em><i><b><span class="highlight">infrastructure</span>, <span class="highlight">business</b></i></em> and everything that revolves around <em><i><b><span class="highlight">data.</b></i></em>
-            
-      <div class="social-links spacingsocial social-text-size social-alignment spacing justtext">
-        <a href="https://github.com/Vivek1799" target="_blank" style="font-weight:300; color: white;">Github</a>
-        <a href="https://twitter.com/vivek_patil17" target="_blank" style="font-weight:300; color: white;">Twitter</a>
-        <a href="mailto:vrp2124@columbia.edu"  target="_blank" style="font-weight:300; color: white;">Email</a>
-        <a href="https://www.linkedin.com/in/vivek-patil-6679aa207/"  target="_blank" style="font-weight:300; color: white;">LinkedIn</a>
-    </div>
+    <header>
+      <img class="header-image1" src="images/header1original.jpg" alt="Your image description">
+      <!-- Add your header content here -->
+    </header>
+    <img class="header-image2" src="images/dataj2.jpg" alt="Your image description"> <!-- add grid-column property -->
     
-    <div class="row">
-        <div class="container article-spacing">
-          <div class="articles-container">
-            <div class="article-box" style="width: 33.33%; float: left; text-align: center;">
-              <a href="https://github.com/Vivek1799/Supreme-Court-2022-Oral-arguments" target="_blank">
-                <img class="gifb" src="images/ezgif.com-gif-maker.gif" alt="description of the gif" style="filter:brightness(120%); contrast(120%); image-rendering: -webkit-optimize-contrast; width: 90%; height: auto; margin: 0 auto; display: block;">
-                <h3 class="article-title justtext" style="margin-top: 20px;">A database that looks for the most Cited sections in the U.S Supreme Court Oral Arguments in 2022.</h3>
-                <p class="article-description justtext" style="margin-top: 10px;">I scraped the Supreme court oral arguments that looks for most quoted sections, the number of times key words like "constitutional","equal protection" were used.</p>
-              </a>
-            </div>
-            <div class="article-box" style="width: 33.33%; float: left; text-align: center;">
-              <a href="https://rentwirenyc.substack.com/p/new-york-city-council-weighs-rent" target="_blank">
-                <img src="images/rent_image.jpg" class="b-image article-image" alt="Article Image" style="width: 90%; height: auto; margin: 0 auto; display: block;">
-                <h3 class="article-title justtext" style="margin-top: 20px;">New York City Council Weighs Rent Regulation on Commercial Spaces</h3>
-                <p class="article-description justtext" style="margin-top: 10px;">The city has not seen commercial rent regulation in more than fifty years. The new bill amidst skyrocketing rents, pandemic and Inflation aims to change that.</p>
-              </a>
-            </div>
-            <div class="article-box" style="width: 33.33%; float: left; text-align: center;">
-              <a href="#">
-                <img src="images/final_data_studioimage.jpg" class="b-image article-image" alt="Article Image" style="filter:brightness(200%); contrast(200%); image-rendering: -webkit-optimize-contrast;width: 90%; height: auto; margin: 0 auto; display: block;">
-                <h3 class="article-title justtext" style="margin-top: 20px;">Carbs, Fats and Protein: Striving for Staple In New York's Ivy League Neighborhood</h3>
-                <p class="article-description justtext" style="margin-top: 10px;">With Inflation for food prices hitting as high as 8.2% in New York City, we look into the prices of basic food essentials and a necessary nourishment - Eggs, Bread and Milk, available at groceries near Columbia University differs from the rest of the places.</p>
-              </a>
-            </div>
-            <div style="clear: both;"></div>
-          </div>
+    <main class="main-content">
+      <!-- Add your main content here -->
+      <img class="interestedin" src="images/iminterestedin3.jpg" alt="Your image description">
+      <div class="social-media-container">
+        <a class="social-media-link" href="https://github.com/Vivek1799"> Github<alt="Github"></a>
+        <a class="social-media-link" href="https://twitter.com/vivek_patil17">Twitter <alt="Twitter"></a>
+        <a class="social-media-link" href="mailto:vrp2124@columbia.edu">Email <alt="Email"></a>
+        <a class="social-media-link" href="https://www.linkedin.com/in/vivek-patil-6679aa207/">LinkedIn <alt="Linkedin"></a>
+      </div>
+      <div class="article-container">
+        <div class="article"> 
+            <a href="https://rentwirenyc.substack.com/p/new-york-city-council-weighs-rent" target="_blank">
+          <img src="images/rent_image.jpg" alt="Article Image"> 
+          <h2>New York City Council Weighs Rent Regulation on Commercial Spaces</h2>
+          <p>The city has not seen commercial rent regulation in more than fifty years. The new bill amidst skyrocketing rents, pandemic and Inflation aims to change that.</p>
+            </a>
         </div>
+        <div class="article">
+            <a href="https://vivek1799.github.io/Essential_Grocery_Prices_around_Columbia_University/" target="_blank">
+              <img src="images/final_data_studioimage.jpg" alt="Article Image">
+             <h2>Carbs, Fats and Protein: Striving for Staple In New York's Ivy League Neighborhood</h2>
+              <p>With Inflation for food prices hitting as high as 8.2% in New York City, we look into the prices of basic food groceries near Columbia University differs from the rest of the places.</p>
+            </a>
+              </div>
+        <div class="article">
+         <a href="https://vivek1799.github.io/Financial-News-companies-scraped-for-tesla/" target="_blank">
+             <img  src="images/ecFoE-tesla-s-closing-price-for-last-three-months.jpg" alt="Article Image">
+             <h2>Bearish To Bullish In Three Months. How Legacy Financial News Covered Tesla?</h2>
+             <p>Reuters, Wallstreet Journal and Financial Times together totaled over 1800 reports on Tesla in three months.</p>
+             </a>      
+             </div>
+        <div class="article">
+            <a href="https://vivek1799.github.io/Supreme-Court-2022-Oral-arguments/" target="_blank">
+          <img  src="images/IyacO-most-quoted-sections-in-u-s-supreme-court-argument-sessions-in-2022.jpg" alt="Article Image">
+          <h2>What Were the Most Quoted Sections In the U.S. Supreme court argumment sessions in 2022?</h2>
+          <p>Section 2 was the most quoted section in the U.S. Supreme court argumment sessions in 2022.</p>
+            </a>
+        </div>
+        <div class="article">
+            <a href="https://vivek1799.github.io/Indian-cities-congestion-problem/" target="_blank">
+          <img  src="images/congestedroads.jpg" alt="Article Image">
+          <h2>Indian Cities have heavy Congestion Problem. Two Made The Top Ten List</h2>
+          <p>Using the report published by Tomtom traffic index 2023, we analyze how Inidan cities fare when it comes to congestion.</p>
+          </a>
+        </div>
+        
+        <!-- Add more articles as needed -->
       </div>
       
-      <div class="row">
-        <div class="container article-spacing">
-          <div class="articles-container">
-            <div class="article-box" style="width: 33.33%; float: left; text-align: center;">
-              <a href="https://github.com/Vivek1799/Supreme-Court-2022-Oral-arguments" target="_blank">
-                <img class="gifb" src="images/ezgif.com-gif-maker.gif" alt="description of the gif" style="filter:brightness(120%); contrast(120%); image-rendering: -webkit-optimize-contrast; width: 90%; height: auto; margin: 0 auto; display: block;">
-                <h3 class="article-title justtext" style="margin-top: 20px;">A database that looks for the most Cited sections in the U.S Supreme Court Oral Arguments in 2022.</h3>
-                <p class="article-description justtext" style="margin-top: 10px;">I scraped the Supreme court oral arguments that looks for most quoted sections, the number of times key words like "constitutional","equal protection" were used.</p>
-              </a>
-            </div>
-            <div class="article-box" style="width: 33.33%; float: left; text-align: center;">
-              <a href="https://rentwirenyc.substack.com/p/new-york-city-council-weighs-rent" target="_blank">
-                <img src="images/rent_image.jpg" class="b-image article-image" alt="Article Image" style="width: 90%; height: auto; margin: 0 auto; display: block;">
-                <h3 class="article-title justtext" style="margin-top: 20px;">New York City Council Weighs Rent Regulation on Commercial Spaces</h3>
-                <p class="article-description justtext" style="margin-top: 10px;">The city has not seen commercial rent regulation in more than fifty years. The new bill amidst skyrocketing rents, pandemic and Inflation aims to change that.</p>
-              </a>
-            </div>
-            <div class="article-box" style="width: 33.33%; float: left; text-align: center;">
-              <a href="#">
-                <img src="images/final_data_studioimage.jpg" class="b-image article-image" alt="Article Image" style="width: 90%; height: auto; margin: 0 auto; display: block;">
-                <h3 class="article-title justtext" style="margin-top: 20px;">Article 3</h3>
-                <p class="article-description justtext" style="margin-top: 10px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae.</p>
-              </a>
-            </div>
-            <div style="clear: both;"></div>
-          </div>
-        </div>
-      </div>
-
-      </p>
-      <p class="balance-text">
-       
-        
-      </p>
-      <p class="balance-text">
-        
-      </p>
-      <div id="gradient"></div>
+     
       
-        
     </main>
-<!-- <script>                        
- gsap.registerPlugin(ScrollTrigger);
-
     
-    ScrollTrigger.config({
-      limitCallbacks: true,
-      ignoreMobileResize: true,
-    });
-
-    ScrollTrigger.normalizeScroll(true);
-
+    <aside class="sidebar">
+      <!-- Add your sidebar content here -->
+    </aside>
     
-  gsap.to("html", {
-         "--deg": "360deg",
-         ease: "sine.out",
-         scrollTrigger: {
-           trigger: "body",
-           start: "top top",
-           end: "bottom bottom",
-           scrub: 4,
-         },
-       });
-
- </script> -->
-    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
-
-</body>
+    <footer>
+      <p ><b> © 2023 – Vivek Patil</b></p>
+    </footer>
+  </body>
 </html>
