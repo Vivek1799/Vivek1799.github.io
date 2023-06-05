@@ -150,49 +150,95 @@
 
 .article-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  background-color: white; /* add a background color */
+  background-color: white; 
   grid-gap: 20px;
+  /* grid-auto-rows: min-content; */
   top: 10px;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .article {
   border: 2px solid rgb(23, 23, 23);
-  padding: 15px;
+  padding: 20px;
   margin-top: 20px;
+  background: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .article img {
   display: block;
   max-width: 100%;
-  height: auto;
-  margin-bottom: 10px;
-  justify-content: center;
-  align-items: center;
-  left: 3px;
+  height: 200px; /* Set a fixed height */
+  /* object-fit: cover; Ensure the image covers the entire area */
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+.article .tags {
+  display: align-items;
+  gap: 10px;
+  margin-bottom: 15px;
+  margin-top: -15px;
+}
+
+.article .tags span {
+  padding: 5px 10px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #333;
 }
 
 .article h2 {
-  font-size: 24px;
-  margin: 0;
-  font-family: "Inter", sans-serif; 
+  font-size: 20px; /* Adjust font-size to make it consistent */
+  line-height: 1.2; /* Add line-height for better readability */
+  height: 48px; /* Set a fixed height */
+  overflow: hidden; /* Hide overflow */
+  margin-bottom: 10px;
+  text-align: center; /* Center the text */
 }
 
 .article p {
   font-size: 16px;
-  margin: 0;
-  font-family: "Inter", sans-serif; 
+  line-height: 1.6;
+  color: #666;
+  height: 96px; /* Set a fixed height */
+  overflow: hidden; /* Hide overflow */
+  text-align: center; /* Center the text */
 }
-a {
-    text-decoration: none;
-    color: black;
+
+.article a {
+  color: #333;
+  text-decoration: none;
 }
+
+.article a:hover {
+  color: #666;
+}
+
 @media only screen and (max-width: 600px) {
   .article-container {
     display: block;
   }
 }
-
+@media only screen and (max-width: 600px) {
+  .article-container {
+    grid-template-columns: 1fr;
+  }
+}
+/* rules for screens smaller than 600px */
+@media (max-width: 600px) {
+            .container {
+                flex-direction: column;
+            }
+            article {
+                min-width: 100%;
+            }
+        }
 
     </style>
   </head>
@@ -205,45 +251,96 @@ a {
     
     <main class="main-content">
       <!-- Add your main content here -->
-      <img class="interestedin" src="images/interests_1.jpg" alt="Your image description">
+      <img class="interestedin" src="images/interests_new.jpg" alt="Your image description">
+      <img class="interestedin" src="images/skilledat_2.jpg" alt="Your image description" style="padding-top: -10px;">
       <div class="social-media-container">
         <a class="social-media-link" href="https://github.com/Vivek1799"> Github<alt="Github"></a>
         <a class="social-media-link" href="https://twitter.com/vivek_patil17">Twitter <alt="Twitter"></a>
         <a class="social-media-link" href="mailto:vrp2124@columbia.edu">Email <alt="Email"></a>
         <a class="social-media-link" href="https://www.linkedin.com/in/vivek-patil-6679aa207/">LinkedIn <alt="Linkedin"></a>
       </div>
-      <div class="article-container">
+      <div class="article-container"><div class="article"> 
+        <div class="tags">
+            <span>Pandas</span>
+            <span>R/Tidyverse</span>
+            <span>Regression</span>
+            <span>ggplot</span></div>
+        <a href="https://vivek1799.github.io/New-York-Storefront-Analysis-2021-22/" target="_blank">
+            <img src="images/Storefront Analysis.png" alt="Article Image" style=" max-width: 100%; height: auto;">
+      <h2>Bronx Bounced Back Better As Many Storefronts in Manhattan Still sit Empty post-COVID</h2>
+      <p>What Three Years of Data Reveal About New York City's Storefronts: A Neighborhood-Level Analysis.</p>
+        </a>
+    </div>
+    <div class="article"> 
+        <div class="tags">
+            <span>Pandas</span>
+            <span>ai2html</span>
+            <span>Playwright</span> 
+            <span>BeautifulSoup</span></div>
+        <a href="https://vivek1799.github.io/WARN-2023-layoff-data/" target="_blank">
+      <img src="images/layoffs.png" alt="Article Image" style="max-width: 100%; height: auto;"> 
+      <h2>New York State Braces for Layoff Tsunami: WARN Data Reveals Over 9,500 Workers to Lose Jobs in First Half of 2023</h2>
+      <p>Industries hit hard include Finance, Healthcare, and Tech with over 6000 jobs laid off in the first half of the year.</p>
+        </a>
+    </div>
+
+
         <div class="article"> 
+            <div class="tags">
+                <span>Excel</span>
+                <span>Reporting</span></div>
             <a href="https://rentwirenyc.substack.com/p/new-york-city-council-weighs-rent" target="_blank">
-          <img src="images/rent_image.jpg" alt="Article Image"> 
+          <img src="images/rent_image.jpg" alt="Article Image" style=" max-width: 100%; height: auto;"> 
           <h2>New York City Council Weighs Rent Regulation on Commercial Spaces</h2>
           <p>The city has not seen commercial rent regulation in more than fifty years. The new bill amidst skyrocketing rents, pandemic and Inflation aims to change that.</p>
             </a>
         </div>
         <div class="article">
+            <div class="tags">
+                <span>Pandas</span>
+                <span>BeautifulSoup</span>
+                <span>Playwright</span>
+                <span>datawrapper</span></div>
             <a href="https://vivek1799.github.io/Essential_Grocery_Prices_around_Columbia_University/" target="_blank">
-              <img src="images/final_data_studioimage.jpg" alt="Article Image">
+              <img src="images/final_data_studioimage.jpg" alt="Article Image"  style=" max-width: 100%; height: auto;">
              <h2>Carbs, Fats and Protein: Striving for Staple In New York's Ivy League Neighborhood</h2>
               <p>With Inflation for food prices hitting as high as 8.2% in New York City, we look into the prices of basic food groceries near Columbia University differs from the rest of the places.</p>
             </a>
               </div>
         <div class="article">
+            <div class="tags">
+                <span>Pandas</span>
+                <span>BeautifulSoup</span>
+                <span>Playwright</span>
+                <span>datawrapper</span></div>
          <a href="https://vivek1799.github.io/Financial-News-companies-scraped-for-tesla/" target="_blank">
-             <img  src="images/ecFoE-tesla-s-closing-price-for-last-three-months.jpg" alt="Article Image">
+             <img  src="images/ecFoE-tesla-s-closing-price-for-last-three-months.jpg" alt="Article Image" style=" max-width: 100%; height: auto;">
              <h2>Bearish To Bullish In Three Months. How Legacy Financial News Covered Tesla?</h2>
              <p>Reuters, Wallstreet Journal and Financial Times together totaled over 1800 reports on Tesla in three months.</p>
              </a>      
              </div>
         <div class="article">
+            <div class="tags">
+                <span>Pandas</span>
+                <span>BeautifulSoup</span>
+                <span>Playwright</span>
+                <span>CSS</span>
+                <span>HTML</span></div>
             <a href="https://vivek1799.github.io/Supreme-Court-2022-Oral-arguments/" target="_blank">
-          <img  src="images/IyacO-most-quoted-sections-in-u-s-supreme-court-argument-sessions-in-2022.jpg" alt="Article Image">
+          <img  src="images/IyacO-most-quoted-sections-in-u-s-supreme-court-argument-sessions-in-2022.jpg" alt="Article Image" style=" max-width: 100%; height: auto;">
           <h2>What Were the Most Quoted Sections In the U.S. Supreme court argumment sessions in 2022?</h2>
           <p>Section 2 was the most quoted section in the U.S. Supreme court argumment sessions in 2022.</p>
             </a>
         </div>
         <div class="article">
+            <div class="tags">
+                <span>Pandas</span>
+                <span>ai2html</span>
+                <span>datawrapper</span>
+                <span>CSS</span>
+                <span>HTML</span></div>
             <a href="https://vivek1799.github.io/Indian-cities-congestion-problem/" target="_blank">
-          <img  src="images/congestedroads.jpg" alt="Article Image">
+          <img  src="images/congestedroads.jpg" alt="Article Image" style=" max-width: 100%; height: auto;">
           <h2>Indian Cities have heavy Congestion Problem. Two Made The Top Ten List</h2>
           <p>Using the report published by Tomtom traffic index 2023, we analyze how Inidan cities fare when it comes to congestion.</p>
           </a>
